@@ -22,6 +22,17 @@ const Header = () => {
     </div>
   );
 };
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search"></div>
+      <div className="restaurantContainer">
+        <div className="restaurantCard"></div>
+      </div>
+    </div>
+  );
+};
 const AppLayout = () => {
   return <Header />;
 };

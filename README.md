@@ -34,6 +34,11 @@ for more you can go through documentation [parceljs.org](https://parceljs.org/)
 - -Search
   -RestaurantContainer
   -RestaurantCard
+  -image
+  -name of restaurant
+  -cusines
+  -star rating
+  -delivery time
 - footer
   -Links
   -CopyRight
