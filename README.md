@@ -12,6 +12,7 @@ prodBuild:- npx parcel build index.html
 - Caching - faster builds
 - image optimization
 - bundling
+- Minification
 - compress
 - consistent hashing
 - code splitting
@@ -23,3 +24,19 @@ prodBuild:- npx parcel build index.html
 - Different dev and prod bundles
 
 for more you can go through documentation [parceljs.org](https://parceljs.org/)
+
+/\*\*
+
+- Header
+- -Logo
+- -Nav items
+- Body
+- -Search
+  -RestaurantContainer
+  -RestaurantCard
+- footer
+  -Links
+  -CopyRight
+  -Address
+  -Contact
+  \*/
