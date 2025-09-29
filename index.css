@@ -11,7 +11,48 @@
 .nav-items>ul{
     display:flex;
     list-style: none;
+    font-size: 20px;
 }
 .nav-items>ul>li{
     padding: 10px;
 }
+
+.res-card{
+    width: 200px;
+    height:400px;
+    padding:1px;
+    margin:5px;
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+}
+.res-image{
+    height:141px;
+    width:190px;
+    padding: 5px
+}
+
+.restaurantCard{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+.restaurantContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-name{
+    padding:2px;
+    margin:2px;
+}
+
+.restaurantContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
