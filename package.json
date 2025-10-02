@@ -18,7 +18,8 @@
   "homepage": "https://github.com/THAMITHA/ReactPratice#readme",
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
     "parcel": "^2.16.0"

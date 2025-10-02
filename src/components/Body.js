@@ -1,9 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import resObj from "../utils/mockData";
 import { useEffect, useState } from "react";
+import { Shimmer } from "./Shimmer";
 
 const Body = () => {
-  const [listData, setListData] = useState(resObj);
+  const [listData, setListData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,14 +24,38 @@ const Body = () => {
       );
       console.log(restaurants);
       setListData(restaurants);
+      setFilterData(restaurants);
     } catch (err) {
       console.log(err);
     }
   };
 
-  return (
+  return listData.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      <div className="search">search</div>
+      <div className="search">
+        <input
+          type="text"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+        <button
+          className="searchbtn"
+          onClick={() => {
+            const resFilterData = listData.filter((res) =>
+              res.card.card.info.name
+                .toLowerCase()
+                .includes(searchText.toLowerCase())
+            );
+            setFilterData(resFilterData);
+          }}
+        >
+          search
+        </button>
+      </div>
       <button
         onClick={() => {
           const filterData = listData.filter(
@@ -41,7 +68,7 @@ const Body = () => {
       </button>
       <div className="restaurantContainer">
         <div className="restaurantCard">
-          {listData.map((restaurant) => (
+          {filterData.map((restaurant) => (
             <RestaurantCard
               key={restaurant.card.card.info.id}
               resData={restaurant}
