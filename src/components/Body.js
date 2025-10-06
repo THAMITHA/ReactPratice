@@ -1,12 +1,16 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
+import { MENU_API } from "../constant";
+import { RESTAURANT_API } from "../constant";
+import { useParams } from "react-router-dom";
 
 const Body = () => {
   const [listData, setListData] = useState([]);
   const [filterData, setFilterData] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  const { resId } = useParams();
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,7 +26,7 @@ const Body = () => {
           c?.card?.card?.["@type"] ===
           "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
       );
-      console.log(restaurants);
+      // console.log(restaurants);
       setListData(restaurants);
       setFilterData(restaurants);
     } catch (err) {
@@ -69,10 +73,12 @@ const Body = () => {
       <div className="restaurantContainer">
         <div className="restaurantCard">
           {filterData.map((restaurant) => (
-            <RestaurantCard
+            <Link
+              to={`restaurants/${restaurant.card.card.info.id}`}
               key={restaurant.card.card.info.id}
-              resData={restaurant}
-            />
+            >
+              <RestaurantCard resData={restaurant} />
+            </Link>
           ))}
         </div>
       </div>

@@ -1,11 +1,10 @@
-import { CDN_URL } from "../utils/constant";
+import { CDN_URL } from "../constant";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
   const { name, cuisines, costForTwo, avgRatingString, cloudinaryImageId } =
     resData.card.card.info;
   const { deliveryTime } = resData.card.card.info.sla;
-  console.log(resData.card.card);
 
   const stylecard = {
     backgroundColor: "#f0f0f0",
